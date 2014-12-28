@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<div id="post_container" data-postid="{{ page.id }}">
+	<div class="post-header">
+        <img class="post-avatar pure-img" alt="chmyun's avatar" height="48" width="48"
+        src="{{ page.avatarimg }}" />
+        <h2 class="post-title">
+            <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">
+                {{ page.title }}
+            </a>
+        </h2>
+        <p class="post-meta">
+            <span class="post-date">{{ page.date | date: "%b %-d, %Y" }}</span>
+			{% for tag in page.tags %}
+                <a class="post-tag blue" href="/tag/#{{ tag }}" title="{{ tag }}">
+                    {{ tag }}
+                </a>
+            {% endfor %}
+        </p>
+    </div>
+    <div class="post-description" id="post_description" style="border-left:0;padding-left: 0;margin-left: 0;">
+        {{ content }}
+    </div>
+</div>
+
+<!-- 文章导航 -->
+<ul class="pagination" id="post_nav_pagination">
+	{% if page.previous %}
+		<li class="prev"><a href="{{ site.url }}{{ page.previous.url }}" title="{{ page.previous.title }}"><i class="fa fa-mail-reply"></i> {{ page.previous.title }}</a></li>
+	{% else %}
+		<li class="prev"><a href="javascript:void(0);" class="disabled"><i class="fa fa-chain-broken"></i>  没有文章啦</a></li>
+	{% endif %}
+
+	{% if page.next %}
+		<li class="next"><a href="{{ site.url }}{{ page.next.url }}" title="{{ page.next.title }}"><i class="fa fa-mail-forward"></i> {{ page.next.title }}</a></li>
+	{% else %}
+		<li class="next"><a href="javascript:void(0);" class="disabled"><i class="fa fa-chain-broken"></i>  没有文章啦</a></li>
+	{% endif %}
+</ul>
+
+<!-- 多说评论框 -->
+<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ page.url }}"></div>
+
+<!-- 多说分享 -->
+<!-- <div class="ds-share" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-images="{{ page.avatarimg }}" data-content="{{ page.description }}" data-url="{{ page.url }}">
+    <div class="ds-share-aside-left">
+    	<div class="ds-share-aside-inner"></div>
+    	<div class="ds-share-aside-toggle">分享到</div>
+    </div>
+</div> -->
+
