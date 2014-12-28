@@ -1,0 +1,78 @@
+# 站点信息
+title: 少年不知愁滋味
+author: chmyun
+email: hcy2367@163.com
+keywords: 'blog, github pages, jekyll, markdown, liquid, chmyun'
+description: '人生若只是初见, 何事悲风秋画扇; 你若安好，便是晴天.'
+sinaweibo: http://weibo.com/hcy2367
+baseurl: '' # 网站的根路径 /blog/
+url: http://hcy2367.github.io
+github_username: hcy2367
+
+# markdown解析器，kramdown比较新，maruku比较旧
+markdown: kramdown
+# markdown_ext: 'markdown, mkdown, mkdn, mkd, md'
+textile_ext: 'textile'
+excerpt_separator: '\n\n'
+highlighter: pygments
+relative_permalinks: false
+permalink: date
+# permalink: /:categories/:year/:month/:day/:title
+# 分页
+paginate: 5
+paginate_path: /page/:num
+plugins: ./_plugins
+layouts: ./_layouts
+data_source: ./_data
+keep_files: ['.git', '.svn']
+
+source: .
+destination: ./_site
+
+# 禁用自定义插件
+safe: false
+
+# 转换时排除某些文件、文件夹
+exclude: ['README.md']
+
+# 转换时强制包含某些文件、文件夹。
+#include: ['.htaccess']
+
+# 处理草稿
+show_drafts: null
+
+# 限制文章的数量
+limit_posts: 20
+
+# 在发布文章时使用一个未来的日期
+future: true
+
+#产生相关页面的索引
+lsi: false
+
+# production_url是sitemap.txt生成的url，方便百度谷歌收录
+production_url: http://hcy2367.github.io
+
+#菜单配置
+nav:
+  - text: 首页
+    url: /
+  - text: 标签库
+    url: /tag/
+  - text: 关于我
+    url: /about/
+  - text: 博客源代码
+    url: https://github.com/hcy2367/hcy2367.github.io
+    target: _blank
+
+# 多说评论
+comments:
+  provider: duoshuo
+  duoshuo:
+    short_name: chmyun
+
+# 谷歌分析
+analytics:
+    provider: google
+    google:
+        tracking_id: 'UA-123-12'
