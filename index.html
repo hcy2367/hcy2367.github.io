@@ -1,0 +1,109 @@
+---
+layout: default
+title: 首页
+---
+
+<!--
+  1.可以在default.html模板中使用Liquid标签{{ page.title }}来访问title变量
+  2.site是来自_config.yml文件的全局变量
+  3.page是页面的全局变量
+  4.content是Post或者Page用来渲染生成内容的全局变量
+-->
+
+<!-- 分类
+{% unless site.categories == empty %}
+{% for category in site.categories%}
+    <li><a href="{{ site.url }}/{{ category[0] }}">{{ category[0] | join: "/" }} <span>({{ category[1].size }})</span></a></li>
+{% endfor %}
+{% endunless %}
+-->
+
+<!-- 最新评论 -->
+<!-- <div id="recent_comment">
+    <h3>最新评论</h3>
+    <div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+</div> -->
+
+<div id="post_container">
+    <ul class="post-list">
+    {% for post in paginator.posts %}
+        <li class="post-item" id="post_{{ post.id }}">
+            <div class="post-header">
+                <img src="{{ post.avatarimg }}" class="post-avatar pure-img" alt="chmyun's avatar" height="50" width="50" />
+                <h2 class="post-title">
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                        {{ post.title }}
+                    </a>
+                </h2>
+                <p class="post-meta">
+                    <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                    {% for tag in post.tags %}
+                        <a class="post-tag blue" href="/tag/#{{ tag }}" title="{{ tag }}">
+                            {{ tag }}
+                        </a>
+                    {% endfor %}
+                </p>
+                <p class="post-img">
+                    <img src="{{ post.showimg }}" class="pure-img" />
+                </p>
+            </div>
+            <div class="post-description">
+                <strong>题记:</strong> {{ post.description }}
+            </div>
+            <p><a href="{{ post.url }}" class="pure-button-primary pure-button" title="阅读全文"><i class="fa fa-eye"></i> 阅读全文</a></p>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% if paginator.per_page < paginator.total_posts %}
+<!-- 分页 -->
+<div id="post_pagination">
+    <ul class="pagination">
+        {% if paginator.previous_page %}
+        <li>
+            {% if paginator.previous_page == 1 %}
+            <a href="/" class="prev"><i class="fa fa-angle-double-left"></i></a>
+            {% else %}
+            <a href="{{ paginator.previous_page_path }}" class="prev" title="上一页"><i class="fa fa-angle-double-left"></i></a>
+            {% endif %}
+        </li>
+        {% else %}
+        <!-- <li>
+            <a href="javascript:void(0);" class="prev disabled" title="上一页">&laquo;</a>
+        </li> -->
+        {% endif %}
+
+        <li>
+            {% if paginator.page == 1 %}
+            <!-- jekyll无法识别/page/1 -->
+            <a href="javascript:void(0);" class="active" title="第一页">1</a>
+            {% else %}
+            <a href="/" title="第一页">1</a>
+            {% endif %}
+        </li>
+
+        {% for count in (2..paginator.total_pages) %}
+        <li>
+            {% if count == paginator.page %}
+            <a href="javascript:void(0);" class="active" title="第{{ count }}页">{{ count }}</a>
+            {% else %}
+            <a href="/page/{{ count }}" class="" title="第{{ count }}页">{{ count }}</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+
+        {% if paginator.next_page %}
+        <li>
+            <a href="{{ paginator.next_page_path }}" class="next" title="下一页"><i class="fa fa-angle-double-right"></i></a>
+        </li>
+        {% else %}
+        <!-- <li>
+            <a href="javascript:void(0);" class="next disabled">&larr;</a>
+        </li> -->
+        {% endif %}
+    </ul>
+</div>
+{% endif %}
+
+
