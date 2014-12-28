@@ -1,0 +1,40 @@
+---
+layout: page
+title : 标签库
+permalink: /tag/
+---
+
+<!-- <div id='tagcloud'>
+    {% for tag in site.tags %}
+    <a href="/tag#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+    {% endfor %}
+</div> -->
+
+<div id="tag_list">
+    {% for tag in site.tags %}
+    <div class="column">
+        <h2>{{ tag[0] }}</h2>
+        <ul class="sub-column">
+            {% for post in tag[1] %}
+            <li>
+                <strong><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></strong>
+                <span>{{ post.date | date_to_string }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- <script src="/assets/js/jquery.tagcloud.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function(){
+         $.fn.tagcloud.defaults = {
+            size: {start: 15, end: 25, unit: 'pt'},
+            color: {start: '#90a0dd', end: '#0cf'}
+        };
+        $(function () {
+            $('#tagcloud a').tagcloud();
+        });
+    });
+</script> -->
