@@ -28,7 +28,7 @@ title: 首页
     {% for post in paginator.posts %}
         <li class="post-item" id="post_{{ post.id }}">
             <div class="post-header">
-                <img src="{{ post.avatarimg }}" class="post-avatar pure-img" alt="chmyun's avatar" height="50" width="50" />
+                <img src="/assets/images/img-placeholder.png" data-echo="{{ post.avatarimg }}" class="post-avatar pure-img lazy" height="50" width="50" />
                 <h2 class="post-title">
                     <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
                         {{ post.title }}
@@ -43,7 +43,7 @@ title: 首页
                     {% endfor %}
                 </p>
                 <p class="post-img">
-                    <img src="{{ post.showimg }}" class="pure-img" />
+                    <img src="/assets/images/img-placeholder.png" data-echo="{{ post.showimg }}" class="pure-img lazy" />
                 </p>
             </div>
             <div class="post-description">
