@@ -62,29 +62,7 @@
 	    <div class="bg"></div>
 	</div>
 
-	<script type="text/javascript">
-	  	$(function() {
-		    $(window).scroll(function() {
-			    if ($(this).scrollTop() > 200) {
-			        $('#backtotop').addClass('show');
-			    } else {
-			        $('#backtotop').removeClass('show');
-			    }
-		    });
-
-		    $('#backtotop').bind('click', function() {
-		      	var _this = $(this);
-		      	$('html, body').animate({'scrollTop': '0px'}, 800, function() {
-		          	_this.removeClass('show');
-		      	});
-		    });
-	  	});
-
-	  	$(window).load(function() {
-	    	$('#loading_wrap').fadeOut().children('.loading').hide();
-	  	});
-	</script>
-
+	<script src="/assets/js/global.js" type="text/javascript"></script>
 	<!-- snow -->
 	<script src="/assets/js/snowflake.js" type="text/javascript"></script>
 	<!-- duoshuo -->
@@ -98,7 +76,6 @@
 		    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
 		})();
 	</script>
-
 	<!-- google analytics -->
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
