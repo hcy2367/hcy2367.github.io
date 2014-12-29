@@ -8,8 +8,6 @@ showimg: '/assets/images/post01.jpg'
 tags: ['黑客', '游戏']
 ---
 
-![黑客的圣诞礼物](/assets/images/post01.jpg)
-
 ## 黑客攻击 PSN 和 Xbox Live 在线游戏服务
 
 12 月 26 日凌晨消息，从美国当地时间周三晚上开始，一批黑客一直都在对 PlayStation Network(以下简称「PSN」) 和 Xbox Live 在线游戏服务发动攻击。
