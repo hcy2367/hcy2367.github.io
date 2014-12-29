@@ -3,26 +3,25 @@ layout: default
 title: 首页
 ---
 
-<!--
-  1.可以在default.html模板中使用Liquid标签{{ page.title }}来访问title变量
-  2.site是来自_config.yml文件的全局变量
-  3.page是页面的全局变量
-  4.content是Post或者Page用来渲染生成内容的全局变量
--->
+{% if site.debug == true %}
+<!-- 1.可以在default.html模板中使用Liquid标签{{ page.title }}来访问title变量
+2.site是来自_config.yml文件的全局变量
+3.page是页面的全局变量
+4.content是Post或者Page用来渲染生成内容的全局变量 -->
 
-<!-- 分类
+<!-- 分类 -->
 {% unless site.categories == empty %}
 {% for category in site.categories%}
     <li><a href="{{ site.url }}/{{ category[0] }}">{{ category[0] | join: "/" }} <span>({{ category[1].size }})</span></a></li>
 {% endfor %}
 {% endunless %}
--->
 
 <!-- 最新评论 -->
-<!-- <div id="recent_comment">
+<div id="recent_comment">
     <h3>最新评论</h3>
     <div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
-</div> -->
+</div>
+{% endif %}
 
 <div id="post_container">
     <ul class="post-list">
