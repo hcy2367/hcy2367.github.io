@@ -78,5 +78,9 @@ analytics:
     google:
         tracking_id: 'UA-123-12'
 
-# 调试模式，默认true，发布时记得关闭
+# 调试模式，默认true，发布时记得关闭false
 debug: false
+
+# 图片占位符，用于图片延迟加载
+img_placehoder_url: /assets/images/img-placeholder.png
+
