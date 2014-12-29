@@ -4,17 +4,17 @@
 
 ## Version
 
-**0.1.0** --
+--**1.0**
 * 文章和标签模块；
 * 多说评论模块，国外的如disqus、facebook需要翻墙；
 * yui pure实现响应式布局，在终端设备上也有很好的体验性；
-* CSS3属性实现一些动画效果
+* CSS3属性实现一些动画效果。
 
 ## Usage
-    * $ git clone git@github.com:hcy2367/hcy2367.github.io.git
-    * $ cd hcy2367.github.io.git
-    * $ jekyll serve --watch
-	* # => Now browse to http://localhost:4000
+    $ git clone git@github.com:hcy2367/hcy2367.github.io.git
+    $ cd hcy2367.github.io.git
+    $ jekyll serve --watch
+	# => Now browse to http://localhost:4000
 
 ## Note
 * [jekyll install](http://jekyllrb.com/docs/installation/)
