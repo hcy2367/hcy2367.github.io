@@ -4,8 +4,7 @@ layout: default
 
 <div id="post_container" data-postid="{{ page.id }}">
 	<div class="post-header">
-        <img class="post-avatar pure-img" alt="chmyun's avatar" height="48" width="48"
-        src="{{ page.avatarimg }}" />
+        <img src="/assets/images/img-placeholder.png" data-echo="{{ page.avatarimg }}"  class="post-avatar pure-img lazy" height="50" width="50" />
         <h2 class="post-title">
             <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">
                 {{ page.title }}
@@ -20,7 +19,7 @@ layout: default
             {% endfor %}
         </p>
         <p class="post-img">
-            <img src="{{ page.showimg }}" class="pure-img" />
+            <img src="/assets/images/img-placeholder.png" data-echo="{{ page.showimg }}" class="pure-img lazy" />
         </p>
     </div>
     <div class="post-description" id="post_description" style="border-left:0;padding-left: 0;margin-left: 0;">
