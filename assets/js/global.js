@@ -1,26 +1,53 @@
 
 $(function() {
-	// backtotop
-    $(window).scroll(function() {
-	    if ($(this).scrollTop() > 200) {
-	        $('#backtotop').addClass('show');
-	    } else {
-	        $('#backtotop').removeClass('show');
+    setImgAttr('post_description');
+    imgLazyLoad();
+    backtotop('backtotop');
+});
+
+$(window).load(function() {
+	$('#loading_wrap').fadeOut().children('.loading').hide();
+});
+
+// 设置图片属性，markdown无法添加data-echo属性
+function setImgAttr(id) {
+	$('#' + id).find('img').each(function() {
+    	var src = $(this).attr('src');
+    	$(this).attr('src', '{{ site.img_placehoder_url }}').attr('data-echo', src);
+    });
+}
+
+// 图片延迟加载
+function imgLazyLoad() {
+	echo.init({
+	    offset: 100,
+	    throttle: 250,
+	    unload: false,
+	    callback: function (element, op) {
+	        // console.log(element, 'has been', op + 'ed');
 	    }
     });
-    $('#backtotop').bind('click', function() {
+    // $("img.lazy").lazyload({threshold: 300, event: 'fadeIn'});
+}
+
+// 返回顶部
+function backtotop(id) {
+	$(window).scroll(function() {
+	    if ($(this).scrollTop() > 200) {
+	        $('#' + id).addClass('show');
+	    } else {
+	        $('#' + id).removeClass('show');
+	    }
+    });
+    $('#' + id).bind('click', function() {
       	var _this = $(this);
       	$('html, body').animate({'scrollTop': '0px'}, 800, function() {
           	_this.removeClass('show');
       	});
     });
-});
+}
 
-$(window).load(function() {
-	// loading
-	$('#loading_wrap').fadeOut().children('.loading').hide();
-});
-
+// console.log
 (function(){
 	var console = window.console || {
 			log : function(){}

@@ -1,7 +1,7 @@
 /**
  * @website: http://hcy2367.github.io
  * @author: chmyun
- * @date: 2014-12-27
+ * @date: 2014-12-28
  */
 body {
 	font-family: 'microsoft yahei',Arial,sans-serif !important;
@@ -51,18 +51,22 @@ pre, code {
 	font-size: 15px;
 	border: 1px solid #e8e8e8;
 	border-radius: 3px;
-	background-color: #eef;
+
 }
 code {
 	padding: 1px 5px;
+	background-color: rgba(0,153,153,0.167);
+	margin: 0 3px;
 }
 pre {
 	padding: 8px 12px;
+	background-color: #eef;
 }
 pre > code {
 	border: 0;
 	padding-right: 0;
 	padding-left: 0;
+	background-color: #eef;
 }
 ul, ol {
 	list-style: none;
@@ -152,7 +156,7 @@ ul, ol {
 	border-bottom: 0;
 }
 #post_container .post-title {
-	font-size: 1.8em;
+	font-size: 2em;
 	color: #222;
 	margin-bottom: 0.2em;
 }
@@ -214,6 +218,9 @@ ul, ol {
 #post_description h2 {
 	border-left: 10px solid #7fc042;
 	padding-left: 0.5em;
+}
+#post_description ul {
+	list-style: disc inside;
 }
 
 /**
