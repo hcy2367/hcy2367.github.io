@@ -9,11 +9,14 @@ $(window).load(function() {
 	$('#loading_wrap').fadeOut().children('.loading').hide();
 });
 
-// 设置图片属性，markdown无法添加data-echo属性
+// 设置图片属性(markdown无法添加data-echo属性)
 function setImgAttr(id) {
 	$('#' + id).find('img').each(function() {
     	var src = $(this).attr('src');
     	$(this).attr('src', '{{ site.img_placehoder_url }}').attr('data-echo', src);
+    	if (!$(this).hasClass('pure-img')) {
+    		$(this).addClass('pure-img');
+    	}
     });
 }
 
