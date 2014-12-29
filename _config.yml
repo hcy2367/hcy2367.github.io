@@ -6,6 +6,7 @@ keywords: 'blog, github pages, jekyll, markdown, liquid, chmyun'
 description: '人生若只是初见, 何事悲风秋画扇; 你若安好，便是晴天.'
 sinaweibo: http://weibo.com/hcy2367
 baseurl: '' # 网站的根路径 /blog/
+# url: http://localhost:4000
 url: http://hcy2367.github.io
 github_username: hcy2367
 
@@ -76,3 +77,6 @@ analytics:
     provider: google
     google:
         tracking_id: 'UA-123-12'
+
+# 调试模式，默认true，发布时记得关闭
+debug: false
