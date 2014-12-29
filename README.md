@@ -8,7 +8,8 @@
 * 文章和标签模块；
 * 多说评论模块，国外的如disqus、facebook需要翻墙；
 * yui pure实现响应式布局，在终端设备上也有很好的体验性；
-* CSS3属性实现一些动画效果。
+* CSS3动画效果；
+* 延迟加载图片。
 
 ## Usage
     $ git clone git@github.com:hcy2367/hcy2367.github.io.git
