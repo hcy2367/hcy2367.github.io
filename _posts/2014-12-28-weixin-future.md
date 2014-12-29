@@ -1,10 +1,10 @@
 ---
 layout: post
 title: '[转载] 我们听懂张小龙的微信八条了吗？'
-# categories: ['cat']
+# categories: ['微信']
 description: '难得在微信公开课Pro版上听张小龙讲10多分钟自己的想法，但他对微信未来走向的表达，还是需要仔细琢磨下的。'
-avatarimg: '/assets/images/pidgin.png'
-showimg: '/assets/images/post02.jpg'
+avatarimg: '/assets/images/audium.png'
+showimg: '/assets/images/weixin-wechat.jpg'
 tags: ['微信']
 ---
 
