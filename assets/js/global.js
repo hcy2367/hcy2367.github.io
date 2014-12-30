@@ -1,5 +1,6 @@
 
 $(function() {
+	snow();
     setImgAttr('post_description');
     imgLazyLoad();
     backtotop('backtotop');
@@ -8,6 +9,19 @@ $(function() {
 $(window).load(function() {
 	$('#loading_wrap').fadeOut().children('.loading').hide();
 });
+
+// 下雪效果
+function snow() {
+	$(document).snowfall({
+		// image: 'images/huaban.png',
+		flakeCount: 100,
+		round: true,
+		shadow: true,
+		maxSpeed: 4,
+		minSize: 3,
+		maxSize: 6
+	});
+}
 
 // 设置图片属性(markdown无法添加data-echo属性)
 function setImgAttr(id) {
