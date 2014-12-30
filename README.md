@@ -11,6 +11,9 @@
 * CSS3动画效果；
 * 延迟加载图片。
 
+--**1.1**
+* 添加访问量统计
+
 ## Usage
     $ git clone git@github.com:hcy2367/hcy2367.github.io.git
     $ cd hcy2367.github.io.git
