@@ -13,7 +13,7 @@ $(window).load(function() {
 function setImgAttr(id) {
 	$('#' + id).find('img').each(function() {
     	var src = $(this).attr('src');
-    	$(this).attr('src', '{{ site.img_placehoder_url }}').attr('data-echo', src);
+    	$(this).attr('src', '/assets/images/img-placeholder.png').attr('data-echo', src);
     	if (!$(this).hasClass('pure-img')) {
     		$(this).addClass('pure-img');
     	}
@@ -79,7 +79,7 @@ function backtotop(id) {
 				+'      ┃              ┣┓                   少年不知愁滋味'+ n
 				+'      ┃              ┏┛'+ n
 				+'      ┗┓┓┏━┳┓┏━┛'+ n
-				+'        ┃┫┫  ┃┫┫                      By chmyun chmyun2367@gmail.com'+ n
+				+'        ┃┫┫  ┃┫┫                      By chmyun hcy2367@163.com'+ n
 				+'        ┗┻┛  ┗┻┛'
 		];
 	console.log(words[rand(0, words.length - 1 )]);
