@@ -12,8 +12,9 @@
 * 延迟加载图片。
 
 --**1.1**
-* 添加访问量统计
-* 添加社会媒体化分享
+* 添加访问量统计；
+* 添加社会媒体化分享；
+* 外部http链接加载的资源(js)本地化，因为chrome和Firefox在https协议上加载http协议传输的静态资源时控制台会出现“混合内容”错误信息。
 
 ## Usage
     $ git clone git@github.com:hcy2367/hcy2367.github.io.git
