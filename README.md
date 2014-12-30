@@ -13,6 +13,7 @@
 
 --**1.1**
 * 添加访问量统计
+* 添加社会媒体化分享
 
 ## Usage
     $ git clone git@github.com:hcy2367/hcy2367.github.io.git
