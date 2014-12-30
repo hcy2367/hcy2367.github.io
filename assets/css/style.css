@@ -599,6 +599,16 @@ ul, ol {
 	padding-left: 0;
 	margin-top: .3em;
 }
+.pageview-counter {
+	width:50%;
+	margin:0 auto;
+}
+.pageview-counter span {
+	margin: 0 3px;
+}
+.pageview-counter img {
+	vertical-align: bottom;
+}
 
 /**
  * Syntax highlighting
