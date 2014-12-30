@@ -379,6 +379,13 @@ ul, ol {
 	margin-bottom: 0;
 }
 
+/*cnzz*/
+#cnzz_stat_icon_1254002093 {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
 @media screen and (min-width: 48em) {
 	.sidebar {
 		position: fixed;
@@ -389,6 +396,10 @@ ul, ol {
 		padding: .6em 2.4em 0;
 		margin-left: 25%;
 		min-height: 600px;
+	}
+	#cnzz_stat_icon_1254002093 {
+		margin-left: 25%;
+		width: 75%;
 	}
 }
 
@@ -608,13 +619,6 @@ ul, ol {
 }
 .pageview-counter img {
 	vertical-align: bottom;
-}
-
-/*cnzz*/
-#cnzz_stat_icon_1254002093 {
-	margin: 0 auto;
-	display: block;
-	width: 100px;
 }
 
 /**
