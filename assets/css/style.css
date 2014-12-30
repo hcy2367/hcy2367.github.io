@@ -9,6 +9,18 @@ body {
 	font-size: 13px;
 	background-color: #fff;
 }
+.fl {float: left;}
+.fr {float: right;}
+.clearfix:after{
+	content: ".";
+	height: 0;
+	display: block;
+	visibility: hidden;
+	clear: both;
+}
+.clearfix{
+	*zoom: 1;
+}
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"],
 .pure-g-r [class *= "pure-u"] {
