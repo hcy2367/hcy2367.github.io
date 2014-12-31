@@ -26,7 +26,7 @@
 ## Note
 * [jekyll install](http://jekyllrb.com/docs/installation/)
 * [jekyll document](http://jekyllrb.com/docs/home/)
-* **请在现代浏览器下浏览**：[chmyun's blog](https://hcy2367.github.io)
+* **请在现代浏览器下浏览**：[chmyun's blog](http://hcy2367.github.io)
 
 ## License
 
