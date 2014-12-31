@@ -26,12 +26,12 @@ $(window).load(function() {
 // 动态加载脚本
 function loadScript(src) {
 	var oContainer = document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0],
-		oScript = document.createElement('script'),
-	    oScript.type = 'text/javascript',
-	    oScript.async = true,
-	    oScript.src = src,
-	    oScript.charset = 'UTF-8';
-	oContainer.appendChild(ds);
+		oScript = document.createElement('script');
+    oScript.type = 'text/javascript',
+    oScript.async = true,
+    oScript.src = src,
+    oScript.charset = 'UTF-8';
+	oContainer.appendChild(oScript);
 }
 
 // 移动设备判断
