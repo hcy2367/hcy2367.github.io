@@ -133,6 +133,9 @@ ul, ol {
 .sidebar .nav-link a {
 	color: #666;
 }
+.sidebar .nav-link a:hover {
+	color: #fff;
+}
 .sidebar .nav-item {
 	margin-right: 5px;
 }
