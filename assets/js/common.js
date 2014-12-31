@@ -7,7 +7,7 @@
 // 动态加载js
 function loadScript(src) {
 	var oContainer = (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]),
-    	oScript= document.createElement('script'),
+    	oScript = document.createElement('script'),
     	oScript.type = 'text/javascript',
     	oScript.charset = 'UTF-8',
     	oScript.async = true;

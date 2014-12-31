@@ -4,19 +4,18 @@
  * @date: 2014-12-28
  */
 
-$(function() {
-	if (isPcBrowser()) {
-		snow();
-		forkMe();
-		// jiathis share
-		loadScript('http://v3.jiathis.com/code/jiathis_r.js?move=0&amp;btn=r1.gif&amp;uid=1395394727612232');
-	}
-	// duoshuo comment
-	loadScript((document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js');
-    setImgAttr('post_description');
-    imgLazyLoad();
-    backtotop('backtotop');
-});
+
+if (isPcBrowser()) {
+	snow();
+	forkMe();
+	// jiathis share
+	loadScript('http://v3.jiathis.com/code/jiathis_r.js?move=0&amp;btn=r1.gif&amp;uid=1395394727612232');
+}
+// duoshuo comment
+loadScript((document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js');
+setImgAttr('post_description');
+imgLazyLoad();
+backtotop('backtotop');
 
 $(window).load(function() {
 	$('#loading_wrap').fadeOut().children('.loading').hide();
