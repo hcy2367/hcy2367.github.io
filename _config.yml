@@ -12,9 +12,8 @@ github_username: hcy2367
 
 # markdown解析器，kramdown比较新，maruku比较旧
 markdown: kramdown
-# markdown_ext: 'markdown, mkdown, mkdn, mkd, md'
+markdown_ext: 'md, markdown'
 textile_ext: 'textile'
-excerpt_separator: '\n\n'
 highlighter: pygments
 relative_permalinks: false
 permalink: date
