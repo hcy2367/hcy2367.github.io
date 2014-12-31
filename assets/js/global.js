@@ -1,5 +1,5 @@
 /**
- * @usage func use
+ * @usage global script
  * @author chmyun
  * @date: 2014-12-28
  */
@@ -93,8 +93,7 @@ function backtotop(id) {
 
 // fork me
 function forkMe() {
-	$('body').append('<a href="https://github.com/hcy2367" title="Fork me on GitHub" target="_blank" style="
-    position:fixed;top:0;right:0;z-index:999;"><img src="/assets/images/forkme.png" alt="Fork me on GitHub"></a>');
+	$('body').append('<a href="https://github.com/hcy2367" title="Fork me on GitHub" target="_blank" style="position:fixed;top:0;right:0;z-index:999;"><img src="/assets/images/forkme.png" alt="Fork me on GitHub"></a>');
 }
 
 // console.log
