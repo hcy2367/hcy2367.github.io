@@ -4,13 +4,14 @@
  * @date: 2014-12-28
  */
 
+// duoshuo comment
+loadScript((document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js');
+
 $(function() {
 	if (browserRedirect()) {
 		snow();
 		forkMe();
 	}
-	// duoshuo comment
-	loadScript((document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js');
     setImgAttr('post_description');
     imgLazyLoad();
     backtotop('backtotop');
