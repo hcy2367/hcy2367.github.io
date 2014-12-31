@@ -8,7 +8,11 @@ $(function() {
 	if (browserRedirect()) {
 		snow();
 		forkMe();
+		// jiathis share
+		loadScript('http://v3.jiathis.com/code/jiathis_r.js?move=0&amp;btn=r1.gif&amp;uid=1395394727612232');
 	}
+	// duoshuo comment
+	loadScript((document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js');
     setImgAttr('post_description');
     imgLazyLoad();
     backtotop('backtotop');
@@ -18,6 +22,17 @@ $(function() {
 $(window).load(function() {
 	$('#loading_wrap').fadeOut().children('.loading').hide();
 });
+
+// 动态加载脚本
+function loadScript(src) {
+	var oContainer = document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0],
+		oScript = document.createElement('script'),
+	    oScript.type = 'text/javascript',
+	    oScript.async = true,
+	    oScript.src = src,
+	    oScript.charset = 'UTF-8';
+	oContainer.appendChild(ds);
+}
 
 // 移动设备判断
 function browserRedirect() {
