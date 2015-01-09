@@ -100,7 +100,6 @@ ul, ol {
 }
 .sidebar .header a {
 	color: #fff;
-	transition: color ease 0.3s;
 }
 .sidebar .headerpic a {
 	display: inline-block;
