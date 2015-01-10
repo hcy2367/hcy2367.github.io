@@ -493,6 +493,7 @@ ul, ol {
 #player .play {
   	width: 16px;
   	height: 16px;
+  	margin: 0 5px;
   	background-position: -78px 0;
 }
 #player .repeat {
