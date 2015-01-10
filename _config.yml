@@ -59,8 +59,12 @@ nav:
     url: /
   - text: 标签库
     url: /tag/
+  - text: 音乐库
+    url: /music/
   - text: 关于我
     url: /about/
+  - text: 博客园
+    url: http://www.cnblogs.com/cyStyle/
   - text: 博客源代码
     url: https://github.com/hcy2367/hcy2367.github.io
     target: _blank
