@@ -2,6 +2,7 @@
  * @website: http://hcy2367.github.io
  * @author: chmyun
  * @date: 2014-12-28
+ * @email: hcy2367@163.com
  */
 body {
 	font-family: 'microsoft yahei',Arial,sans-serif !important;
@@ -84,6 +85,27 @@ ul, ol {
 	list-style: none;
 	padding-left: 0;
 }
+::-webkit-scrollbar-track-piece {
+	background-color: #f5f5f5;
+	border-left: 1px solid #d2d2d2
+}
+
+::-webkit-scrollbar {
+	width: 13px;
+	height: 13px
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #c2c2c2;
+	background-clip: padding-box;
+	border: 1px solid #979797;
+	min-height: 28px
+}
+
+::-webkit-scrollbar-thumb:hover {
+	border: 1px solid #636363;
+	background-color: #929292
+}
 
 /**
  * sidebar
@@ -92,17 +114,26 @@ ul, ol {
 	/*background: rgb(61, 79, 93);*/
 	color: #fff;
 	background: url(../images/snow.gif) repeat 0 0;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 9;
 }
 .sidebar .header {
 	text-align: center;
 	top: auto;
-	margin: 3em auto;
+	margin: 2em auto;
 }
 .sidebar .header a {
 	color: #fff;
 }
 .sidebar .headerpic a {
 	display: inline-block;
+	transition: all ease .5s;
+}
+.sidebar .headerpic a:hover {
+	opacity: .8;
+	filter:alpha(opacity=80);
 }
 .sidebar .headerpic img {
 	border-radius: 50% / 50%;
@@ -156,7 +187,9 @@ ul, ol {
  * content
  */
 .content {
-	padding: 2em 1em 0;
+	padding: .6em 2.4em 0;
+	margin-left: 25%;
+	min-height: 600px;
 }
 #post_container .post-list, #post_container .post-title {
 	margin-top: 0;
@@ -345,6 +378,260 @@ ul, ol {
 }
 
 /**
+ * music
+ */
+.play-container {
+	background : -webkit-linear-gradient(left top, #040C12, #3D474F);
+	background : -moz-linear-gradient(left top, #040C12, #3D474F);
+	background : -o-linear-gradient(left top, #040C12, #3D474F);
+	box-shadow: 1px 5px 18px 6px #7D7D7D;
+	-webkit-box-shadow: 1px 5px 18px 6px #7D7D7D;
+	-moz-box-shadow: 1px 5px 18px 6px #7D7D7D;
+	padding: 50px;
+}
+#player {
+	width: 70%;
+	height: 180px;
+	padding: 25px;
+	margin: 50px auto 30px;
+	position: relative;
+}
+#player .cover {
+	background: rgba(0, 0, 0, 0.5);
+	border: 1px solid #333;
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	overflow: hidden;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	border-radius: 10px;
+	border-radius: 10px;
+	width: 130px;
+	height: 130px;
+	-moz-box-shadow: 0 2px 10px black;
+	-webkit-box-shadow: 0 2px 10px black;
+	-o-box-shadow: 0 2px 10px black;
+	box-shadow: 0 2px 10px black;
+}
+#player .cover img {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	border-radius: 10px;
+	border-radius: 10px;
+	width: 130px;
+	height: 130px;
+}
+#player .ctrl {
+	margin-left: 155px;
+	text-shadow: 0 1px 2px #000;
+	line-height: 16px;
+}
+#player .tag strong, #player .tag span {
+	display: block;
+	text-overflow: ellipsis;
+}
+#player .tag strong {
+	color: #fff;
+}
+#player .tag span {
+	font-size: 12px;
+	margin-top: 5px;
+	color: #ccc;
+}
+#player .ctrl .icon {
+	opacity: 0.6;
+	cursor: pointer;
+	-moz-transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+#player .ctrl .icon:hover, #player .ctrl .icon.enable {
+	opacity: 1;
+}
+#player .ctrl .icon:active {
+	opacity: 0.3;
+}
+#player .ctrl .control {
+	margin-top: 10px;
+	height: 25px;
+}
+
+/*-----The sprites----*/
+#player .rewind, #player .play, #player .play.playing, #player .forward,
+#player .mute, #player .mute.enable, #player .repeat, #player .repeat.once,
+#player .shuffle, #player .shuffle.enable {
+	display: inline-block;
+  	*zoom: 1;
+  	vertical-align: middle;
+  	background: url(../images/music-icon.png) no-repeat;
+}
+#player .forward {
+  	width: 16px;
+  	height: 16px;
+  	background-position: 0 0;
+}
+#player .mute.enable {
+  	width: 16px;
+  	height: 16px;
+  	background-position: -26px 0;
+}
+#player .play.playing {
+  	width: 16px;
+  	height: 16px;
+  	background-position: -52px 0;
+}
+#player .play {
+  	width: 16px;
+  	height: 16px;
+  	background-position: -78px 0;
+}
+#player .repeat {
+  	width: 22px;
+  	height: 18px;
+  	background-position: -126px 0;
+}
+#player .repeat.once {
+  	width: 22px;
+  	height: 18px;
+  	background-position: -158px 0;
+}
+#player .rewind {
+  	width: 16px;
+  	height: 16px;
+  	background-position: -190px 0;
+}
+#player .shuffle {
+  	width: 22px;
+  	height: 18px;
+  	background-position: -216px 0;
+}
+#player .shuffle.enable {
+  	width: 22px;
+  	height: 18px;
+  	background-position: -248px 0;
+}
+#player .mute {
+  	width: 16px;
+  	height: 16px;
+  	background-position: -280px 0;
+}
+#player .volume .slider {
+	margin-top: 6px;
+	margin-left: 10px;
+	width: 100px;
+}
+#player .progress {
+	margin-top: 10px;
+}
+#player .progress .timer {
+	font-size: 12px;
+	color: #ccc;
+	margin-top: 8px;
+}
+#player .repeat, #player .shuffle {
+	margin-top: 4px;
+}
+#player .slider {
+	background: rgba(0, 0, 0, 0.3);
+	height: 5px;
+	position: relative;
+	cursor: pointer;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+	-o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+}
+#player .slider:hover a, #player .slider.enable a {
+	opacity: 1;
+}
+#player .slider a {
+	background: #fff;
+	margin-left: -2.5px;
+	position: absolute;
+	opacity: 0;
+	width: 5px;
+	height: 5px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-khtml-border-radius: 50%;
+	border-radius: 50%;
+	-moz-transition: opacity 0.3s ease-out;
+	-webkit-transition: opacity 0.3s ease-out;
+	-o-transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
+}
+#player .slider .loaded, #player .slider .pace {
+	position: absolute;
+	height: 100%;
+	opacity: 0.8;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+}
+#player .slider .loaded {
+	background: rgba(255, 255, 255, 0.1);
+}
+#player .slider .pace {
+	background: #258fb8;
+}
+#playlist {
+	background: rgba(0, 0, 0, 0.5);
+	width: 65%;
+	margin: 0 auto 50px;
+	padding: 10px 15px;
+	position: relative;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+	-o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+#playlist li {
+	color: #aaa;
+	font-size: 12px;
+	line-height: 2;
+	padding-left: 25px;
+	cursor: pointer;
+	text-overflow: ellipsis;
+	-moz-transition: color 0.5s ease-out;
+	-webkit-transition: color 0.5s ease-out;
+	-o-transition: color 0.5s ease-out;
+	transition: color 0.5s ease-out;
+}
+#playlist li:hover {
+	color: #fff;
+}
+#playlist li.playing {
+	background: url(../images/music-playing.png) no-repeat 0 center;
+	color: #fff;
+	font-weight: bold;
+}
+
+/**
  * about
  */
 .page-container {
@@ -384,24 +671,53 @@ ul, ol {
 /*cnzz*/
 #cnzz_stat_icon_1254002093 {
 	display: block;
-	width: 100%;
+	margin-left: 25%;
+	width: 75%;
 	text-align: center;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (max-width: 80em) {
 	.sidebar {
-		position: fixed;
-		top: 0;
-		bottom: 0;
+		position: static;
 	}
 	.content {
-		padding: .6em 2.4em 0;
-		margin-left: 25%;
-		min-height: 600px;
+		padding: 2em 1em 0;
+		margin-left: 0;
+		min-height: auto;
 	}
 	#cnzz_stat_icon_1254002093 {
-		margin-left: 25%;
-		width: 75%;
+		width: 100%;
+		margin-left: 0;
+	}
+}
+/*35.5em ==> 320px*/
+@media screen and (max-width: 48em) {
+	.play-container {
+		padding: 10px;
+	}
+	#player {
+		width: 100%;
+		height: auto;
+		padding: 0;
+		margin: 0;
+	}
+	#player .cover {
+		width: 100px;
+		height: 100px;
+		position: static;
+	}
+	#player .cover img {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+	}
+	#player .ctrl {
+		margin-left: 0;
+		margin-top: 10px;
+	}
+	#playlist {
+		width: 100%;
+		margin: 40px 0 0 0;
 	}
 }
 
