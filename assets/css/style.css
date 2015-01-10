@@ -686,6 +686,9 @@ ul, ol {
 		margin-left: 0;
 		min-height: auto;
 	}
+	.page-container {
+		min-height: auto;
+	}
 	#cnzz_stat_icon_1254002093 {
 		width: 100%;
 		margin-left: 0;
