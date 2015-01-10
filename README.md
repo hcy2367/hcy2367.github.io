@@ -17,6 +17,9 @@
 * 社会化分享；
 * 手机终端不开启雪花效果，因为消耗内存可能有点大，加载会变慢。
 
+--**1.2**
+* 音乐库，类似于百度音乐网页版；
+
 ## Usage
     $ git clone git@github.com:hcy2367/hcy2367.github.io.git
     $ cd hcy2367.github.io.git
