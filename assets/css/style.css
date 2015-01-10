@@ -340,7 +340,6 @@ ul, ol {
 #tag_list {
     overflow: hidden;
     color: #383838;
-    min-height: 550px;
 }
 #tag_list .column {
     width: 50%;
@@ -635,9 +634,6 @@ ul, ol {
 /**
  * about
  */
-.page-container {
-	min-height: 600px;
-}
 .page-title {
 	padding-left: 10px;
 	border-left: 5px solid #159b76;
@@ -684,10 +680,7 @@ ul, ol {
 	.content {
 		padding: 2em 1em 0;
 		margin-left: 0;
-		min-height: auto;
-	}
-	.page-container {
-		min-height: auto;
+		min-height: 0;
 	}
 	#cnzz_stat_icon_1254002093 {
 		width: 100%;
