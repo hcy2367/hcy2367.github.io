@@ -195,6 +195,13 @@ function forkMe() {
 			cover: '/assets/images/music05.jpg',
 			mp3: '/assets/music/paomo.mp3',
 			ogg: ''
+		}, {
+			title: '不再联系',
+			artist: '夏天Alex',
+			album: '值得单曲循环的一首歌',
+			cover: '/assets/images/music06.jpg',
+			mp3: '/assets/music/buzailianxi.mp3',
+			ogg: ''
 		}];
 
 	// Load playlist
