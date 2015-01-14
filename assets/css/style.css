@@ -190,6 +190,7 @@ ul, ol {
 	padding: .6em 2.4em 0;
 	margin-left: 25%;
 	min-height: 600px;
+	background: url(../images/content-bg.png) repeat 0 0;
 }
 #post_container .post-list, #post_container .post-title {
 	margin-top: 0;
