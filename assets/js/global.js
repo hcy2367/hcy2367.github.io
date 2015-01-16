@@ -10,7 +10,7 @@ loadScript((document.location.protocol == 'https:' ? 'https:' : 'http:') + '//st
 $(function() {
 	if (browserRedirect()) {
 		snow();
-		forkMe();
+		// forkMe();
 	}
     setImgAttr('post_description');
     imgLazyLoad();
