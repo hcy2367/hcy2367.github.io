@@ -31,7 +31,7 @@ $(window).load(function() {
 	}
 	function deviceMotionHandler(eventData) {
 	    var acceleration = eventData.accelerationIncludingGravity; // 获取含重力的加速度
-	    var curTime = newDate().getTime();
+	    var curTime = new Date().getTime();
 	    // 100毫秒进行一次位置判断，若前后x, y, z间的差值的绝对值和时间比率超过了预设的阈值，则判断设备进行了摇晃操作。
 	    if ((curTime - lastUpdate) > 100) {
 	        var diffTime = curTime - lastUpdate;
