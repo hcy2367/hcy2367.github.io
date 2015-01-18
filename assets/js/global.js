@@ -20,7 +20,8 @@ $(function() {
 
 $(window).load(function() {
 	$('#loading_wrap').fadeOut().children('.loading').hide();
-	// 手机传感器运动
+
+	// 手机传感器运动(摇一摇换歌)
 	var shakeThreshold = 1000; // 定义一个摇动的阈值
 	var lastUpdate = 0; // 记录上一次摇动的时间
 	var x, y, z, lastX, lastY, lastZ; // 定义x、y、z记录三个轴的数据以及上一次触发的数据
@@ -383,6 +384,8 @@ function forkMe() {
 		// 歌曲加载完毕后
 		var afterLoad = function() {
 			if (autoplay == true) {
+				// 隐藏加载歌曲loading
+				$('#music_loading').hide();
 				play();
 			}
 		};
@@ -395,6 +398,8 @@ function forkMe() {
 			$('#player .cover').html('<img src="' + item.cover + '" alt="' + item.album + '">');
 			$('#player .tag').html('<strong class="title">' + item.title + '</strong><span class="artist">' + item.artist + '</span><span class="album">' + item.album + '</span>');
 			$('#playlist li').removeClass('playing').eq(i).addClass('playing');
+			// 显示加载歌曲loading
+			$('#music_loading').show();
 			audio = newaudio[0];
 			audio.volume = $('#player .mute').hasClass('enable') ? 0 : volume;
 			audio.addEventListener('progress', beforeLoad, false);
