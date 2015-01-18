@@ -14,9 +14,9 @@ tags: ['html5', 'web app']
 
 ![摇一摇换歌](/assets/images/shake-music.png)
 
-测试地址：[http://hcy2367.github.io/music/](http://hcy2367.github.io/music/)，**请在手机浏览器中打开该链接，建议WiFi下操作，否则一首歌几M的流量挺坑的。**
+测试地址：[http://hcy2367.github.io/music/](http://hcy2367.github.io/music/)，**请在手机浏览器中打开该链接，建议WiFi下操作，否则一首歌几M的流量挺坑的，然后摇一摇换歌，操作可能会有点慢。**
 
-先来看下html5的这几个特性：
+来看下html5的这几个特性：
 
 * 1.deviceOrientation：方向传感器数据的事件，通过监听该事件可以获取手机静态状态下的方向数据；
 * 2.deviceMotion: 运动传感器数据事件，通过监听该事件可以获取手机运动状态下的运动加速度数据；
@@ -75,4 +75,4 @@ tags: ['html5', 'web app']
 其实web app的单页应用已经很广泛了，开发成本低，phonegap也可以通过navigator.accelerometer加速器插件实现摇一摇的功能，实际上是通过js去实现本地的接口，实现跨平台，但这种方式没原生提供的api强大，html5 will play a important role in the future！
 
 
-> good good study，day day up！
+> 你若安好，便是晴天！
