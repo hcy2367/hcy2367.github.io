@@ -11,6 +11,8 @@ $(function() {
 	if (browserRedirect()) {
 		snow();
 		// forkMe();
+	} else {
+		$('#loading_wrap').fadeOut().children('.loading').hide();
 	}
     setImgAttr('post_description');
     imgLazyLoad();
@@ -19,40 +21,42 @@ $(function() {
 
 
 $(window).load(function() {
-	$('#loading_wrap').fadeOut().children('.loading').hide();
-
-	// 手机传感器运动(摇一摇换歌)
-	var shakeThreshold = 1000; // 定义一个摇动的阈值
-	var lastUpdate = 0; // 记录上一次摇动的时间
-	var x, y, z, lastX, lastY, lastZ; // 定义x、y、z记录三个轴的数据以及上一次触发的数据
-	if (window.DeviceMotionEvent) {
-	    window.addEventListener('devicemotion', deviceMotionHandler, false);
+	if (browserRedirect()) {
+		$('#loading_wrap').fadeOut().children('.loading').hide();
 	} else {
-	    alert('本设备不支持devicemotion事件');
-	}
-	function deviceMotionHandler(eventData) {
-	    var acceleration = eventData.accelerationIncludingGravity; // 获取含重力的加速度
-	    var curTime = new Date().getTime();
-	    // 100毫秒进行一次位置判断，若前后x, y, z间的差值的绝对值和时间比率超过了预设的阈值，则判断设备进行了摇晃操作。
-	    if ((curTime - lastUpdate) > 100) {
-	        var diffTime = curTime - lastUpdate;
-	        lastUpdate = curTime;
+		// 手机传感器运动(摇一摇换歌)
+		var shakeThreshold = 1000; // 定义一个摇动的阈值
+		var lastUpdate = 0; // 记录上一次摇动的时间
+		var x, y, z, lastX, lastY, lastZ; // 定义x、y、z记录三个轴的数据以及上一次触发的数据
+		if (window.DeviceMotionEvent) {
+		    window.addEventListener('devicemotion', deviceMotionHandler, false);
+		} else {
+		    alert('本设备不支持devicemotion事件');
+		}
+		function deviceMotionHandler(eventData) {
+		    var acceleration = eventData.accelerationIncludingGravity; // 获取含重力的加速度
+		    var curTime = new Date().getTime();
+		    // 100毫秒进行一次位置判断，若前后x, y, z间的差值的绝对值和时间比率超过了预设的阈值，则判断设备进行了摇晃操作。
+		    if ((curTime - lastUpdate) > 100) {
+		        var diffTime = curTime - lastUpdate;
+		        lastUpdate = curTime;
 
-	        x = acceleration.x;
-	        y = acceleration.y;
-	        z = acceleration.z;
+		        x = acceleration.x;
+		        y = acceleration.y;
+		        z = acceleration.z;
 
-	        var speed = Math.abs(x + y + z - lastX - lastY - lastZ) / diffTime * 10000;
+		        var speed = Math.abs(x + y + z - lastX - lastY - lastZ) / diffTime * 10000;
 
-	        if (speed > shakeThreshold) {
-	            // 播放音乐
-	            $('#player .forward').trigger('click');
-	        }
+		        if (speed > shakeThreshold) {
+		            // 播放音乐
+		            $('#player .forward').trigger('click');
+		        }
 
-	        lastX = x;
-	        lastY = y;
-	        lastZ = z;
-	    }
+		        lastX = x;
+		        lastY = y;
+		        lastZ = z;
+		    }
+		}
 	}
 });
 
