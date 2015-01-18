@@ -20,6 +20,39 @@ $(function() {
 
 $(window).load(function() {
 	$('#loading_wrap').fadeOut().children('.loading').hide();
+	// 手机传感器运动
+	var shakeThreshold = 1000; // 定义一个摇动的阈值
+	var lastUpdate = 0; // 记录上一次摇动的时间
+	var x, y, z, lastX, lastY, lastZ; // 定义x、y、z记录三个轴的数据以及上一次触发的数据
+	if (window.DeviceMotionEvent) {
+	    window.addEventListener('devicemotion', deviceMotionHandler, false);
+	} else {
+	    alert('本设备不支持devicemotion事件');
+	}
+	function deviceMotionHandler(eventData) {
+	    var acceleration = eventData.accelerationIncludingGravity; // 获取含重力的加速度
+	    var curTime = newDate().getTime();
+	    // 100毫秒进行一次位置判断，若前后x, y, z间的差值的绝对值和时间比率超过了预设的阈值，则判断设备进行了摇晃操作。
+	    if ((curTime - lastUpdate) > 100) {
+	        var diffTime = curTime - lastUpdate;
+	        lastUpdate = curTime;
+
+	        x = acceleration.x;
+	        y = acceleration.y;
+	        z = acceleration.z;
+
+	        var speed = Math.abs(x + y + z - lastX - lastY - lastZ) / diffTime * 10000;
+
+	        if (speed > shakeThreshold) {
+	            // 播放音乐
+	            $('#player .forward').trigger('click');
+	        }
+
+	        lastX = x;
+	        lastY = y;
+	        lastZ = z;
+	    }
+	}
 });
 
 // 动态加载脚本
@@ -341,12 +374,13 @@ function forkMe() {
 			}
 		};
 
+		// 歌曲加载之前
 		var beforeLoad = function() {
 			var endVal = this.seekable && this.seekable.length ? this.seekable.end(0) : 0;
 			$('#player .progress .loaded').css('width', (100 / (this.duration || 1) * endVal) + '%');
 		};
 
-		// Fire when track loaded completely
+		// 歌曲加载完毕后
 		var afterLoad = function() {
 			if (autoplay == true) {
 				play();
@@ -369,7 +403,8 @@ function forkMe() {
 			audio.addEventListener('ended', ended, false);
 		};
 
-		loadMusic(currentTrack);
+		loadMusic(currentTrack); /// 初始化
+
 		$('#player .play').on('click', function() {
 			if ($(this).hasClass('playing')) {
 				pause();
@@ -378,6 +413,7 @@ function forkMe() {
 			}
 		});
 
+		// 上一首
 		$('#player .rewind').on('click', function() {
 			if (shuffle === 'true') {
 				shufflePlay();
@@ -386,6 +422,7 @@ function forkMe() {
 			}
 		});
 
+		// 下一首
 		$('#player .forward').on('click', function() {
 			if (shuffle === 'true') {
 				shufflePlay();
@@ -394,6 +431,7 @@ function forkMe() {
 			}
 		});
 
+		// 歌曲列表点击换歌
 		$('#playlist li').each(function(i) {
 			var _i = i;
 			$(this).on('click', function() {
@@ -404,10 +442,12 @@ function forkMe() {
 		if (shuffle === 'true') {
 			$('#player .shuffle').addClass('enable');
 		}
+
 		if (repeat == 1) {
 			$('#player .repeat').addClass('once');
 		}
 
+		// 单曲循环
 		$('#player .repeat').on('click', function() {
 			if ($(this).hasClass('once')) {
 				repeat = localStorage.repeat = 0;
@@ -418,6 +458,7 @@ function forkMe() {
 			}
 		});
 
+		// 随机播放
 		$('#player .shuffle').on('click', function() {
 			if ($(this).hasClass('enable')) {
 				shuffle = localStorage.shuffle = 'false';
