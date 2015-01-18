@@ -7,7 +7,7 @@
 --**1.0**
 * 文章和标签模块；
 * 多说评论模块，国外的如disqus、facebook需要翻墙；
-* yui pure实现响应式布局，在终端设备上也有很好的体验性；
+* yui pure实现响应式布局，在终端设备上也有很好的web app体验性；
 * CSS3动画效果；
 * 延迟加载图片。
 
@@ -19,6 +19,7 @@
 
 --**1.2**
 * 音乐库，类似于百度音乐网页版；
+* 手机摇一摇换歌曲；
 
 ## Usage
     $ git clone git@github.com:hcy2367/hcy2367.github.io.git
