@@ -72,7 +72,7 @@ tags: ['html5', 'web app']
 
 ## Last
 
-其实web app的单页应用已经很广泛了，开发成本低，phonegap也可以通过navigator.accelerometer加速器插件实现摇一摇的功能，实际上是通过js去实现本地的接口，实现跨平台，但这种方式没原生提供的api强大，html5 will play a important role in the future！
+其实web app的单页应用已经很广泛了，开发成本低，phonegap也可以在webview层通过这种方式实现摇一摇功能，然后打包成平台的app。另外也可以利用navigator.accelerometer加速器插件实现摇一摇的功能，实际上是通过js去实现本地的接口，实现跨平台，但这种方式没原生提供的api强大，html5 will play a important role in the future！
 
 
 > 你若安好，便是晴天！
