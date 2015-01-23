@@ -10,19 +10,16 @@ loadScript((document.location.protocol == 'https:' ? 'https:' : 'http:') + '//st
 $(function() {
 	if (browserRedirect()) {
 		snow();
-		// forkMe();
-	} else {
-		$('#loading_wrap').fadeOut().children('.loading').hide();
 	}
     setImgAttr('post_description');
     imgLazyLoad();
     backtotop('backtotop');
+    $('#loading_wrap').fadeOut().children('.loading').hide();
 });
-
 
 $(window).load(function() {
 	if (browserRedirect()) {
-		$('#loading_wrap').fadeOut().children('.loading').hide();
+		// $('#loading_wrap').fadeOut().children('.loading').hide();
 	} else {
 		// 手机传感器运动(摇一摇换歌)
 		var shakeThreshold = 1000; // 定义一个摇动的阈值
