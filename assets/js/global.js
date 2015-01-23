@@ -24,7 +24,6 @@ $(window).load(function() {
 	if (browserRedirect()) {
 		$('#loading_wrap').fadeOut().children('.loading').hide();
 	} else {
-		$('.page-title').append('<span style="font-size:14px;color:#38f;margin-left:5px;">(摇一摇换歌)</span>');
 		// 手机传感器运动(摇一摇换歌)
 		var shakeThreshold = 1000; // 定义一个摇动的阈值
 		var lastUpdate = 0; // 记录上一次摇动的时间
@@ -110,6 +109,15 @@ function setImgAttr(id) {
     	$(this).attr('src', '/assets/images/img-placeholder.png').attr('data-echo', src);
     	if (!$(this).hasClass('pure-img')) {
     		$(this).addClass('pure-img');
+    	}
+    	if (src.indexOf('iEmoji') > -1) {
+    		$(this).css({width: '320px', display: 'inline-block'});
+    	}
+    });
+    $('.post-img img').each(function() {
+    	var src = $(this).attr('src');
+    	if (src.indexOf('img-placeholder') > -1) {
+    		$(this).css({width: '320px', display: 'inline-block'});
     	}
     });
 }
