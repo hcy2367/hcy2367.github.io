@@ -68,7 +68,7 @@ PhoneGap主要依赖于webkit浏览器的内核解析，所以它的运行效率
 
 ## 总结
 
-其实还有很多的功能点可以做，但时间有限，苹果版就不搞了，先来个安卓版v1.0.0吧，app下载地址：[http://pan.baidu.com/s/1i3HyRrf](http://pan.baidu.com/s/1i3HyRrf)
+其实还有很多的功能点可以做，但时间有限，苹果版就不搞了，先来个安卓版v1.0.0吧，**app下载地址**：[http://pan.baidu.com/s/1i3HyRrf](http://pan.baidu.com/s/1i3HyRrf)  **github代码**：[https://github.com/hcy2367/iEmoji/](https://github.com/hcy2367/iEmoji/)
 
 
 > 岁月安好！
